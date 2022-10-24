@@ -1,0 +1,110 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* font-family: 'Palanquin', sans-serif;
+  font-family: 'Staatliches', cursive; */
+}
+
+:root {
+  font-size: 62.5%;
+  --body-bg: #EFF1FF;
+  --header-div-bg: #CBC0D3;
+  --header-bg: #8E9AAF;
+  --card-title-bg: #FEEAFA;
+}
+
+body {
+  background-color: var(--body-bg);
+}
+
+header {
+  box-sizing: content-box;
+  background-color: #8E9AAF;
+
+  min-height: 200px;
+  height: 28vh;
+  max-height: 280px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 2.5vh 0;
+
+  color: #fff;
+}
+
+
+header img {
+  min-width: 100px;
+  width: 15vh;
+  max-width: 150px;
+}
+
+header div {
+  background-color: var(--header-div-bg);
+
+  width: 100%;
+  padding: 10px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header div h1{
+  font-family: 'Staatliches', cursive;
+  Font-style: Regular;
+  font-weight: 400;
+  Font-size: clamp(2.5rem, 8.5vw , 4.0rem);
+
+  letter-spacing: 4px;
+  
+}
+
+main{
+  padding: 18px 8vw;
+  text-align: center;
+}
+
+main span{
+  font-family: 'Palanquin', sans-serif;
+  font-size: clamp(1.2rem, 0rem + 2vh , 1.8rem);
+  line-height: 2rem;
+  color: hsla(274, 84%, 12%, 1);
+}
+
+main section{
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.card{
+  position: relative;
+  max-width: 400px;
+  align-self: center;
+}
+
+.card img{
+  width: 100%;
+  max-width: 400px;
+}
+
+.card-title{
+  position: absolute;
+  top: 18px;
+  right: 18px;
+
+  background-color: var(--card-title-bg);
+
+  padding: 4px clamp(12px, 14px, 24px);
+
+  border-radius: 20px;
+
+  font-family: 'Staatliches', cursive;
+  font-size: clamp(1.6rem, 0.6rem + 3vw, 2rem);
+  color: hsla(232, 17%, 35%, 1);
+}
