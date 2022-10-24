@@ -53,50 +53,55 @@ header div {
   justify-content: center;
 }
 
-header div h1{
+header div h1 {
   font-family: 'Staatliches', cursive;
   Font-style: Regular;
   font-weight: 400;
-  Font-size: clamp(2.5rem, 8.5vw , 4.0rem);
+  Font-size: clamp(2.5rem, 8.5vw, 4.0rem);
 
   letter-spacing: 4px;
-  
+
 }
 
-main{
+main {
   padding: 18px 8vw;
   text-align: center;
 }
 
-main span{
+main span {
   font-family: 'Palanquin', sans-serif;
-  font-size: clamp(1.2rem, 0rem + 2vh , 1.8rem);
+  font-size: clamp(1.2rem, 0rem + 2vh, 1.8rem);
   line-height: 2rem;
   color: hsla(274, 84%, 12%, 1);
 }
 
-main section{
+main section {
   margin-top: 48px;
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
 
-.card{
+.card {
   position: relative;
   max-width: 400px;
   align-self: center;
+
+  animation-name: downtop;
+  animation-duration: 0.7s;
 }
 
-.card img{
+.card img {
   width: 100%;
   max-width: 400px;
 }
 
-.card-title{
+.card-title {
   position: absolute;
   top: 18px;
   right: 18px;
+
+  opacity: 0;
 
   background-color: var(--card-title-bg);
 
@@ -107,4 +112,34 @@ main section{
   font-family: 'Staatliches', cursive;
   font-size: clamp(1.6rem, 0.6rem + 3vw, 2rem);
   color: hsla(232, 17%, 35%, 1);
+
+  animation-name: topdown;
+  animation-duration: 0.7s;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(+25px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-35px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
