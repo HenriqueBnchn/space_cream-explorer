@@ -37,17 +37,15 @@ header {
 
 
 header img {
-  min-width: 100px;
-  width: 15vh;
-  max-width: 150px;
+  min-width: 120px;
+  width: 19vh;
+  max-width: 200px;
 }
 
 header div {
   background-color: var(--header-div-bg);
-
   width: 100%;
-  padding: 10px 0;
-
+  padding: 5px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,12 +53,17 @@ header div {
 
 header div h1 {
   font-family: 'Staatliches', cursive;
-  Font-style: Regular;
   font-weight: 400;
-  Font-size: clamp(2.5rem, 8.5vw, 4.0rem);
-
+  Font-size: clamp(2.5rem, 8.5vw, 4.8rem);
   letter-spacing: 4px;
+}
 
+header section{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 }
 
 main {
@@ -68,7 +71,7 @@ main {
   text-align: center;
 }
 
-main span {
+.text {
   font-family: 'Palanquin', sans-serif;
   font-size: clamp(1.2rem, 0rem + 2vh, 1.8rem);
   line-height: 2rem;
@@ -89,6 +92,13 @@ main section {
 
   animation-name: downtop;
   animation-duration: 0.7s;
+
+  transition: 0.3s;
+}
+
+.card:hover{
+  transform: scale(110%);
+  cursor: pointer;
 }
 
 .card img {
@@ -141,5 +151,48 @@ main section {
   100%{
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+
+
+@media (max-width: 475px) {
+  footer{
+    display: none;
+  }
+  .text.desktop{
+    display: none;
+  }
+}
+
+
+@media (min-width: 476px) {
+  .text.mobile{
+    display: none;
+  }
+
+  .text.desktop{
+    color: #fff;
+  }
+  body{
+    display: flex;
+    min-height: 100vh;
+  }
+
+  header{
+    min-height: 100vh;
+    max-height: none;
+    display: grid;
+    grid-template-rows: 0.7fr 1fr;
+  }
+
+  header section{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
   }
 }
